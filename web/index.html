@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="teamApp">
+<head>
+	<script src="angular.min.js"></script>
+	<script src="team.js"></script>
+</head>
+<body data-ng-controller="TeamController as controller">
+	<h2>Todo</h2>
+	<div data-ng-hide='controller.team'>
+		<button ng-click="controller.atleticoConnect()">Atletico</button>
+		<button ng-click="controller.cruzeirenseConnect()">Cruzeiro</button>
+	</div>
+	<div data-ng-show='controller.team'>
+		<button ng-click="controller.score()">Marcar</button>
+		<div >
+			<span>{{controller.team}}</span>
+				<hr/>
+			
+			Jogadores: <br/>
+			Atletico : <span>{{controller.data.atleticanos}}</span><br/>
+			Cruzeiro : <span>{{controller.data.cruzerences}}</span><br/>			
+			
+				<hr/>
+			Pontos: <br/>
+			Atletico : <span>{{controller.data.scores.atleticanos}}</span><br/>
+			Cruzeiro : <span>{{controller.data.scores.cruzerences}}</span><br/>
+				<hr/>
+
+		</div>
+	</div>
+</body>
+</html>
