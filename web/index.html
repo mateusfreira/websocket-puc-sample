@@ -1,31 +1,42 @@
 <!doctype html>
 <html ng-app="teamApp">
+
 <head>
 	<script src="angular.min.js"></script>
 	<script src="team.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
 </head>
 <body data-ng-controller="TeamController as controller">
-	<h2>Todo</h2>
-	<div data-ng-hide='controller.team'>
-		<button ng-click="controller.atleticoConnect()">Atletico</button>
-		<button ng-click="controller.cruzeirenseConnect()">Cruzeiro</button>
-	</div>
-	<div data-ng-show='controller.team'>
-		<button ng-click="controller.score()">Marcar</button>
-		<div >
-			<span>{{controller.team}}</span>
+	<div class="container-fluid">
+		<div data-ng-hide='controller.team'>
+		 	<h2>Vamos jogar!!</h2>
+			<h3>Escolha seu time!!</h3>
+			<button class="btn btn-default" ng-click="controller.atleticoConnect()">Atletico</button>
+			<button class="btn btn-default" ng-click="controller.cruzeirenseConnect()">Cruzeiro</button>
+		</div>
+		<div data-ng-show='controller.team'>
+			<div >
+				<h3>Seu time : {{controller.team}}</h3>
 				<hr/>
-			
-			Jogadores: <br/>
-			Atletico : <span>{{controller.data.atleticanos}}</span><br/>
-			Cruzeiro : <span>{{controller.data.cruzerences}}</span><br/>			
-			
+				<button class="btn btn-default" ng-click="controller.score()">Marcar</button>
 				<hr/>
-			Pontos: <br/>
-			Atletico : <span>{{controller.data.scores.atleticanos}}</span><br/>
-			Cruzeiro : <span>{{controller.data.scores.cruzerences}}</span><br/>
-				<hr/>
+				
+				Jogadores: <br/>
+				Atletico : <span>{{controller.data.atleticanos}}</span><br/>
+				Cruzeiro : <span>{{controller.data.cruzerences}}</span><br/>			
+				
+					<hr/>
+				Pontos: <br/>
+				Atletico : <span>{{controller.data.scores.atleticanos}}</span><br/>
+				Cruzeiro : <span>{{controller.data.scores.cruzerences}}</span><br/>
+					<hr/>
 
+			</div>
 		</div>
 	</div>
 </body>

@@ -1,4 +1,4 @@
-var webSocket = new WebSocket("ws://localhost:8001");
+var webSocket = new WebSocket("ws://transitobh.com.br:8001");
 angular.module('teamApp', [])
   .controller('TeamController', function($scope) {
     var teamController = this;
